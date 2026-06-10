@@ -59,8 +59,8 @@ overlay
 br_netfilter
 EOF
 
-modprobe overlay
-modprobe br_netfilter
+/use/sbin/modprobe overlay
+/use/sbin/modprobe br_netfilter
 
 cat > /etc/sysctl.d/k8s.conf <<EOF
 net.bridge.bridge-nf-call-iptables = 1
