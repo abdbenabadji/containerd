@@ -37,7 +37,7 @@ apt-get update
 
 
 echo "=== Installation de Containerd ==="
-apt-get install -y containerd
+apt-get install -y containerd.io
 
 echo "=== Génération de la configuration ==="
 mkdir -p /etc/containerd
