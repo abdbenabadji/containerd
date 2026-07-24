@@ -89,3 +89,7 @@ VERSION="v1.36.0"
 wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz
 sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
 crictl info
+
+
+echo "=== Remove Machine-Id on template VM ==="
+sudo truncate -s 0 /etc/machine-id
