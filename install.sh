@@ -26,8 +26,18 @@ apt-get install -y \
     ca-certificates \
     apt-transport-https
 
+echo "=== Ajout du dépôt Docker ==="
+curl -fsSL https://download.docker.com/linux/debian/gpg \
+    | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+chmod a+r /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+
+
 echo "=== Installation de Containerd ==="
-apt-get install -y containerd
+apt-get install -y containerd.io
 
 echo "=== Génération de la configuration ==="
 mkdir -p /etc/containerd
