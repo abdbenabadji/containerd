@@ -17,6 +17,7 @@ echo "=== Mise à jour du système ==="
 apt-get update
 apt-get upgrade -y
 
+echo " === Installation de HELM ==="
 echo "=== Installation des dépendances ==="
 apt-get install -y \
     curl \
