@@ -22,6 +22,7 @@ echo "=== Installation des dépendances ==="
 apt-get install -y \
     curl \
     wget \
+    git \
     gnupg \
     lsb-release \
     ca-certificates \
